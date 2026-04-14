@@ -6,10 +6,10 @@ import { Briefcase, Users, Zap } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="hero" style={{ padding: 'clamp(6rem, 10vh, 10rem) 0 4rem 0', position: 'relative', overflow: 'hidden' }}>
-      <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', alignItems: 'center', gap: '3rem', flexWrap: 'wrap-reverse' }}>
+      <div className="container hero-content-wrap" style={{ position: 'relative', zIndex: 2, display: 'flex', alignItems: 'center', gap: '3rem', flexWrap: 'wrap' }}>
         
         {/* Left Content Area */}
-        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ flex: '1 1 350px' }}>
+        <motion.div className="hero-text-block" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ flex: '1 1 350px' }}>
           <h1 style={{ fontSize: 'clamp(2.2rem, 6vw, 4rem)', marginBottom: '1.5rem', color: 'var(--text-main)', textAlign: 'left', lineHeight: 1.1 }}>
             Fast Job ya <span className="text-gradient">Fast Hiring</span><br />
             Dono yahan milega!
@@ -35,7 +35,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Right Visual Image Composition */}
-        <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center', position: 'relative' }}>
+        <motion.div className="hero-image-block" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center', position: 'relative' }}>
           
           <div style={{ position: 'relative', width: '100%', maxWidth: '500px', height: 'clamp(350px, 50vh, 500px)' }}>
             {/* Background shape */}

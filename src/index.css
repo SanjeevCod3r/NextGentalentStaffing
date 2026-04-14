@@ -442,6 +442,22 @@ a {
   .hero-section {
     padding: 2rem 1rem;
   }
+
+  .hero-content-wrap {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+  }
+
+  .hero-text-block {
+    width: 100%;
+    order: 1;
+  }
+
+  .hero-image-block {
+    width: 100%;
+    order: 2;
+  }
 }
 
 .social-icon {
