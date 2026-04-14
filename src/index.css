@@ -328,6 +328,28 @@ a {
   align-items: center;
 }
 
+/* Home "About Your Company" layout: content on top, images below */
+.about-company-grid {
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  grid-template-areas:
+    "text text"
+    "collage side";
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-company-text {
+  grid-area: text;
+}
+
+.about-company-collage {
+  grid-area: collage;
+}
+
+.about-company-right {
+  grid-area: side;
+}
+
 .collage-container {
   position: relative;
   height: 420px;
@@ -338,6 +360,15 @@ a {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .about-company-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "collage"
+      "side";
+    gap: 2rem;
   }
 
   .collage-container {

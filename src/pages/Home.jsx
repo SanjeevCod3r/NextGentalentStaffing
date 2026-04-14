@@ -25,10 +25,10 @@ const Home = () => {
       {/* ──────── ABOUT SECTION ──────── */}
       <section style={{ background: 'white', padding: '6rem 0' }}>
         <div className="container">
-          <div className="about-grid">
+          <div className="about-grid about-company-grid">
 
             {/* LEFT — label + headline + items */}
-            <div>
+            <div className="about-company-text">
               <p style={{
                 color: 'var(--primary)', fontWeight: '700', fontSize: '0.82rem',
                 letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1rem',
@@ -91,7 +91,7 @@ const Home = () => {
             </div>
 
             {/* MIDDLE — overlapping photo collage */}
-            <div className="collage-container">
+            <div className="collage-container about-company-collage">
               {/* Back / left photo */}
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
@@ -117,7 +117,7 @@ const Home = () => {
             </div>
 
             {/* RIGHT — single photo + description */}
-            <div>
+            <div className="about-company-right">
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80"
                 alt="Professional team"
