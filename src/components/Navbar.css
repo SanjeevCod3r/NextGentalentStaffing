@@ -75,14 +75,16 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-link {
   color: var(--text-main);
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  padding: 0.35rem 0.1rem;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -369,7 +371,7 @@ body.drawer-open > div > footer {
 
 @media (max-width: 768px) {
   .nav-links {
-    gap: 1rem;
+    gap: 1.25rem;
   }
   
   .nav-link {

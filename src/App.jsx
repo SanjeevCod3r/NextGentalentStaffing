@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MessageCircle } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
@@ -28,6 +29,16 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+
+        <a
+          href="https://wa.me/918383061237"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-floating-btn"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <MessageCircle size={24} />
+        </a>
         
         <Footer />
       </div>
