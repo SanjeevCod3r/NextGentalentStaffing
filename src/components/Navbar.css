@@ -12,20 +12,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 80px;
+}
+
+@media (max-width: 1024px) {
+  .nav-cta-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .nav-container {
-    height: 60px;
+  .nav-cta-btn {
+    display: none; /* Hide on mobile, use drawer instead */
   }
 }
 
 /* Logo Responsiveness */
 .nav-logo {
-  height: 50px;
+  height: 60px;
   width: auto;
-  max-width: 120px;
+  max-width: 150px;
   margin-top: 0;
   object-fit: contain;
   transition: var(--transition);
@@ -33,15 +40,15 @@
 
 @media (max-width: 768px) {
   .nav-logo {
-    height: 40px;
-    max-width: 100px;
+    height: 50px;
+    max-width: 120px;
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo {
-    height: 35px;
-    max-width: 85px;
+    height: 45px;
+    max-width: 110px;
   }
 }
 
@@ -67,18 +74,57 @@
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
 .nav-link {
+  color: var(--text-main);
+  text-decoration: none;
   font-weight: 500;
-  color: var(--text-muted);
-  transition: var(--transition);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
   position: relative;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
   color: var(--primary);
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(15, 98, 254, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 98, 254, 0.4);
 }
 
 .nav-link::after {

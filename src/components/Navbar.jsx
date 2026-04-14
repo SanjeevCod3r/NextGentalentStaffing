@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, PhoneCall } from 'lucide-react';
 import './Navbar.css'; // We'll add some specific scoping here
 
 const Navbar = () => {
@@ -52,9 +52,11 @@ const Navbar = () => {
             <Link to="/" className={`nav-link ${isActive('/')}`}>Home</Link>
             <Link to="/about" className={`nav-link ${isActive('/about')}`}>About Us</Link>
             <Link to="/services" className={`nav-link ${isActive('/services')}`}>Services</Link>
-            <Link to="/employer" className={`nav-link ${isActive('/employer')}`}>For Employers</Link>
-            <Link to="/jobs" className={`nav-link ${isActive('/jobs')}`}>Find Jobs</Link>
             <Link to="/contact" className={`nav-link ${isActive('/contact')}`}>Contact</Link>
+            <a href="tel:+918383061237" className="nav-cta-btn">
+              <PhoneCall size={16} />
+              Call Now
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -91,14 +93,6 @@ const Navbar = () => {
                   <Link to="/services" className={`drawer-link ${isActive('/services')}`} onClick={closeMenu}>
                     <span className="drawer-icon">⚙️</span>
                     <span>Services</span>
-                  </Link>
-                  <Link to="/employer" className={`drawer-link ${isActive('/employer')}`} onClick={closeMenu}>
-                    <span className="drawer-icon">🏢</span>
-                    <span>For Employers</span>
-                  </Link>
-                  <Link to="/jobs" className={`drawer-link ${isActive('/jobs')}`} onClick={closeMenu}>
-                    <span className="drawer-icon">💼</span>
-                    <span>Find Jobs</span>
                   </Link>
                   <Link to="/contact" className={`drawer-link ${isActive('/contact')}`} onClick={closeMenu}>
                     <span className="drawer-icon">📞</span>
