@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import EnquiryModal from './components/EnquiryModal';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
+        <EnquiryModal />
         
         <main style={{ flex: 1 }}>
           <Routes>

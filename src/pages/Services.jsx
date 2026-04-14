@@ -92,7 +92,7 @@ const Services = () => {
         </div>
 
         {/* ── Section 2 – Goals / list section ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '5rem', alignItems: 'flex-start' }}>
+        <div className="services-split-section" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '5rem', alignItems: 'flex-start' }}>
 
           {/* Left heading */}
           <div>
@@ -108,7 +108,7 @@ const Services = () => {
           </div>
 
           {/* Right rows */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem 3rem' }}>
+          <div className="services-rows-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem 3rem' }}>
             {[
               { icon: Search,    color: 'var(--primary)',   title: 'Talent Acquisition',   desc: 'End-to-end candidate sourcing, screening, and placement.' },
               { icon: FileText,  color: 'var(--secondary)', title: 'Payroll Reports',      desc: 'Accurate monthly reports, PF, ESI, and tax compliance.' },
@@ -124,6 +124,17 @@ const Services = () => {
         </div>
 
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .services-split-section { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        }
+        @media (max-width: 768px) {
+          .services-rows-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          .section-padding { padding: 4rem 0 !important; }
+          .glass-card { padding: 2rem 1.5rem !important; }
+        }
+      `}} />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const JobSeeker = () => {
       />
       <div className="container section-padding">
 
-        <div className="grid grid-2" style={{ marginTop: '3rem', gap: '2rem' }}>
+        <div className="grid grid-2 jobseeker-grid" style={{ marginTop: '3rem', gap: '2rem' }}>
           <motion.div className="glass-card" initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
             <h2 style={{ fontSize: '1.8rem', color: 'var(--primary-dark)', marginBottom: '1.5rem' }}>Why Apply With Us?</h2>
 
@@ -54,6 +54,15 @@ const JobSeeker = () => {
         </div>
 
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          .jobseeker-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; margin-top: 1rem !important; }
+          .section-padding { padding: 3rem 0 !important; }
+          h2 { font-size: 1.5rem !important; }
+          .glass-card { padding: 1.5rem !important; }
+        }
+      `}} />
     </div>
   );
 };

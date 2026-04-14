@@ -104,7 +104,7 @@ const Home = () => {
               />
               {/* Front / right photo */}
               <img
-                src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?auto=format&fit=crop&w=600&q=80"
+                src="public/asset/home.png"
                 alt="Office environment"
                 style={{
                   position: 'absolute', bottom: 0, right: 0,

@@ -14,7 +14,7 @@ const About = () => {
 
       <div className="container section-padding">
         {/* Intro Section */}
-        <div className="grid grid-2" style={{ gap: '4rem', marginBottom: '4rem', alignItems: 'flex-start' }}>
+        <div className="grid grid-2 intro-grid" style={{ gap: '4rem', marginBottom: '4rem', alignItems: 'flex-start' }}>
           {/* Left Column */}
           <div>
             <div style={{ 
@@ -99,9 +99,9 @@ const About = () => {
         </div>
 
         {/* Bottom Content Area */}
-        <div className="grid grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
+        <div className="bottom-content-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
           {/* Visual Collage representing the lower half of the image */}
-          <div style={{ position: 'relative', height: '400px', width: '100%' }}>
+          <div className="about-collage" style={{ position: 'relative', height: '400px', width: '100%' }}>
             <img 
               src="https://images.unsplash.com/photo-1573164713619-24c711fe7878?auto=format&fit=crop&w=800&q=80" 
               alt="Team Work" 
@@ -149,14 +149,14 @@ const About = () => {
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div className="glass-card" style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <div style={{ background: 'rgba(15, 98, 254, 0.1)', padding: '1rem', borderRadius: '16px', color: 'var(--primary)' }}>
                 <Target size={32} />
               </div>
               <div>
-                <h3 style={{ marginBottom: '0.5rem', fontSize: '1.4rem' }}>Our Mission</h3>
-                <p style={{ color: 'var(--text-muted)', margin: 0, lineHeight: '1.6' }}>
+                <h3 style={{ marginBottom: '0.5rem', fontSize: '1.3rem' }}>Our Mission</h3>
+                <p style={{ color: 'var(--text-muted)', margin: 0, lineHeight: '1.6', fontSize: '0.9rem' }}>
                   To provide fast, reliable, and cost-effective staffing and payroll solutions tailored to your business needs.
                 </p>
               </div>
@@ -168,7 +168,7 @@ const About = () => {
               </div>
               <div>
                 <h3 style={{ marginBottom: '0.5rem', fontSize: '1.4rem' }}>Our Vision</h3>
-                <p style={{ color: 'var(--text-muted)', margin: 0, lineHeight: '1.6' }}>
+                <p style={{ color: 'var(--text-muted)', margin: 0, lineHeight: '1.6', fontSize: '0.9rem' }}>
                   To become India’s most trusted staffing partner and comprehensive HRMS platform for the future.
                 </p>
               </div>
@@ -176,6 +176,20 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .intro-grid { gap: 2rem !important; margin-bottom: 3rem !important; }
+          .bottom-content-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .about-collage { height: 350px !important; }
+        }
+        @media (max-width: 768px) {
+          .intro-grid { grid-template-columns: 1fr !important; }
+          .about-collage { height: 300px !important; }
+          .glass-card { padding: 1.5rem !important; }
+          h2 { font-size: 2rem !important; }
+        }
+      `}} />
     </div>
   );
 };

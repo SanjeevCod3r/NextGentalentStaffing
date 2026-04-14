@@ -59,8 +59,8 @@ const Employer = () => {
       />
 
       {/* ── HERO SPLIT SECTION ── */}
-      <div className="container" style={{ padding: '6rem 2rem 5rem' }}>
-        <div style={{
+      <div className="container section-padding" style={{ padding: '6rem 2rem 5rem' }}>
+        <div className="employer-hero-block" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '5rem',
@@ -75,7 +75,7 @@ const Employer = () => {
               style={{ width: '100%', height: '420px', objectFit: 'cover', borderRadius: '24px', display: 'block', boxShadow: '0 16px 48px rgba(15,98,254,0.15)' }}
             />
             {/* Experience badge */}
-            <div style={{
+            <div className="experience-badge" style={{
               position: 'absolute', top: '2rem', right: '-1.5rem',
               background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)',
               color: 'white', padding: '1.4rem 1.8rem', borderRadius: '16px',
@@ -106,7 +106,7 @@ const Employer = () => {
             </p>
 
             {/* Checkmarks */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem 2rem', marginBottom: '2.5rem' }}>
+            <div className="employer-check-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem 2rem', marginBottom: '2.5rem' }}>
               {['Skilled & ITI Candidates', 'Pan-India Deployment', 'Payroll Management', 'Compliance Assured'].map(item => (
                 <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: '600' }}>
                   <CheckCircle2 size={18} color="var(--primary)" strokeWidth={2.2} />
@@ -161,7 +161,7 @@ const Employer = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.8rem' }}>
+          <div className="employer-services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.8rem' }}>
             <ServiceCard
               icon={UserCheck}
               title="Skilled Workforce"
@@ -197,9 +197,21 @@ const Employer = () => {
         </div>
       </div>
 
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 991px) {
+          .employer-hero-block { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .employer-check-grid { gap: 1rem !important; }
+        }
+        @media (max-width: 768px) {
+          .employer-hero-block { padding: 0 !important; }
+          .experience-badge { position: relative !important; top: -1.5rem !important; right: 0 !important; margin: 0 auto !important; width: fit-content !important; min-width: 200px !important; }
+          .employer-check-grid { grid-template-columns: 1fr !important; gap: 0.8rem !important; }
+          .employer-services-grid { grid-template-columns: 1fr !important; }
+          img { height: 300px !important; }
+        }
+      `}} />
     </div>
   );
 };
 
 export default Employer;
-

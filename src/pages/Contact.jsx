@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, MessageSquare,HelpCircle } from 'lucide-react';
+import React from 'react';
+import { MapPin, Phone, Mail, Clock, MessageSquare, HelpCircle } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import ContactForm from '../components/ContactForm';
 
 /* ── Enhanced Info card ── */
 const InfoCard = ({ icon: Icon, iconBg, title, children, delay }) => (
@@ -30,14 +31,6 @@ const InfoCard = ({ icon: Icon, iconBg, title, children, delay }) => (
 );
 
 const Contact = () => {
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 5000);
-  };
-
   const faqs = [
     { q: "What is your typical response time?", a: "We aim to respond to all inquiries within 24 business hours." },
     { q: "Do you charge job seekers for placements?", a: "No, we provide genuine job opportunities to candidates absolutely free of charge." },
@@ -99,63 +92,7 @@ const Contact = () => {
               </p>
             </div>
 
-            {sent ? (
-              <div style={{
-                flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                textAlign: 'center', background: 'rgba(15, 98, 254, 0.05)', borderRadius: '24px', padding: '4rem',
-                animation: 'fadeInUp 0.5s ease-out'
-              }}>
-                <div style={{ 
-                  width: '90px', height: '90px', borderRadius: '50%', background: 'var(--primary)', 
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem',
-                  boxShadow: '0 12px 30px rgba(15, 98, 254, 0.4)'
-                }}>
-                  <CheckCircle2 size={45} color="white" />
-                </div>
-                <h3 style={{ fontSize: '2rem', fontWeight: '800', margin: '0 0 0.5rem' }}>Message Received!</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem' }}>Thank you for reaching out. We'll be in touch very soon.</p>
-                <button onClick={() => setSent(false)} className="btn btn-outline" style={{ marginTop: '2.5rem', borderRadius: '12px' }}>Send Another Message</button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.2rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem' }}>
-                  <div className="input-group" style={{ margin: 0 }}>
-                    <label style={{ fontWeight: '600', marginBottom: '0.5rem', display: 'block', fontSize: '0.9rem' }}>Full Name *</label>
-                    <input type="text" className="input-control" placeholder="John Doe" required style={{ padding: '0.75rem 1rem', borderRadius: '10px' }} />
-                  </div>
-                  <div className="input-group" style={{ margin: 0 }}>
-                    <label style={{ fontWeight: '600', marginBottom: '0.5rem', display: 'block', fontSize: '0.9rem' }}>Phone Number *</label>
-                    <input type="tel" className="input-control" placeholder="+91 XXXXX XXXXX" required style={{ padding: '0.75rem 1rem', borderRadius: '10px' }} />
-                  </div>
-                </div>
-
-                <div className="input-group" style={{ margin: 0 }}>
-                  <label style={{ fontWeight: '600', marginBottom: '0.5rem', display: 'block', fontSize: '0.9rem' }}>Email Address</label>
-                  <input type="email" className="input-control" placeholder="john@example.com" style={{ padding: '0.75rem 1rem', borderRadius: '10px' }} />
-                </div>
-
-                <div className="input-group" style={{ margin: 0 }}>
-                  <label style={{ fontWeight: '600', marginBottom: '0.5rem', display: 'block', fontSize: '0.9rem' }}>I am interested in...</label>
-                  <select className="input-control" style={{ padding: '0.75rem 1rem', borderRadius: '10px', cursor: 'pointer' }}>
-                    <option value="">Select an option</option>
-                    <option value="staffing">Staffing Solutions</option>
-                    <option value="payroll">Payroll Management</option>
-                    <option value="hrms">HRMS Software</option>
-                    <option value="job">Looking for a Job</option>
-                    <option value="other">General Inquiry</option>
-                  </select>
-                </div>
-
-                <div className="input-group" style={{ margin: 0 }}>
-                  <label style={{ fontWeight: '600', marginBottom: '0.5rem', display: 'block', fontSize: '0.9rem' }}>Your Message *</label>
-                  <textarea className="input-control" rows="4" placeholder="How can we help you?" required style={{ padding: '0.75rem 1rem', borderRadius: '10px', resize: 'none' }} />
-                </div>
-
-                <button type="submit" className="btn btn-primary" style={{ padding: '1rem', fontSize: '1.05rem', borderRadius: '12px', marginTop: '0.5rem', width: '100%', justifyContent: 'center' }}>
-                  Send Message <Send size={18} />
-                </button>
-              </form>
-            )}
+            <ContactForm />
           </div>
         </div>
 
