@@ -104,21 +104,208 @@
   cursor: pointer;
 }
 
-.mobile-menu {
-  position: absolute;
-  top: 70px;
-  left: 1rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.5rem;
-  z-index: 99;
+/* Background blur when drawer is open */
+.navbar.drawer-open ~ main,
+.navbar.drawer-open ~ footer {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .mobile-menu {
-    top: 60px;
+/* Also blur body content for better effect */
+body.drawer-open {
+  overflow: hidden;
+}
+
+body.drawer-open > div > main,
+body.drawer-open > div > footer {
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+
+/* Mobile Drawer Styles */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideIn 0.3s ease forwards;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.drawer-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-left: 0.5rem;
+}
+
+.drawer-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.drawer-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  font-weight: 500;
+}
+
+.drawer-link:hover {
+  background: linear-gradient(90deg, rgba(15, 98, 254, 0.1) 0%, transparent 100%);
+  border-left-color: var(--primary);
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.drawer-link.active {
+  background: linear-gradient(90deg, rgba(15, 98, 254, 0.15) 0%, transparent 100%);
+  border-left-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.drawer-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.drawer-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(15, 98, 254, 0.05);
+}
+
+.drawer-contact {
+  text-align: center;
+}
+
+.drawer-contact p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.drawer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(15, 98, 254, 0.1);
+  transition: all 0.3s ease;
+}
+
+.drawer-phone:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-drawer {
+    width: 260px;
+    right: -260px;
+  }
+  
+  .drawer-header {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  
+  .drawer-logo {
+    height: 35px;
+    margin-left: 0.25rem;
+  }
+  
+  .drawer-close {
+    width: 35px;
+    height: 35px;
+    margin-right: 0.25rem;
+  }
+  
+  .drawer-link {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .drawer-icon {
+    font-size: 1rem;
   }
 }
 

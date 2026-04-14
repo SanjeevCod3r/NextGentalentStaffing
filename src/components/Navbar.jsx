@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css'; // We'll add some specific scoping here
@@ -12,9 +12,36 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path ? 'active' : '';
 
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.classList.add('drawer-open');
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      document.body.classList.remove('drawer-open');
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      document.body.classList.remove('drawer-open');
+    };
+  }, [isOpen]);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${isOpen ? 'drawer-open' : ''}`}>
         <div className="container nav-container">
           <Link to="/" className="logo-container" onClick={closeMenu}>
             <img src="/asset/nextgentalentstaffing logo.png" alt="NextGen Talent Staffing" className="nav-logo" />
@@ -36,16 +63,58 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Drawer */}
         {isOpen && (
-          <div className="mobile-menu glass-card">
-            <Link to="/" className={`mobile-link ${isActive('/')}`} onClick={closeMenu}>Home</Link>
-            <Link to="/about" className={`mobile-link ${isActive('/about')}`} onClick={closeMenu}>About Us</Link>
-            <Link to="/services" className={`mobile-link ${isActive('/services')}`} onClick={closeMenu}>Services</Link>
-            <Link to="/employer" className={`mobile-link ${isActive('/employer')}`} onClick={closeMenu}>For Employers</Link>
-            <Link to="/jobs" className={`mobile-link ${isActive('/jobs')}`} onClick={closeMenu}>Find Jobs</Link>
-            <Link to="/contact" className={`mobile-link ${isActive('/contact')}`} onClick={closeMenu}>Contact</Link>
-          </div>
+          <>
+            {/* Backdrop */}
+            <div className="drawer-backdrop" onClick={closeMenu}></div>
+            
+            {/* Drawer */}
+            <div className="mobile-drawer">
+              <div className="drawer-header">
+                <img src="/asset/nextgentalentstaffing logo.png" alt="NextGen Talent Staffing" className="drawer-logo" />
+                <button className="drawer-close" onClick={closeMenu}>
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="drawer-content">
+                <div className="drawer-nav">
+                  <Link to="/" className={`drawer-link ${isActive('/')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">🏠</span>
+                    <span>Home</span>
+                  </Link>
+                  <Link to="/about" className={`drawer-link ${isActive('/about')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">👥</span>
+                    <span>About Us</span>
+                  </Link>
+                  <Link to="/services" className={`drawer-link ${isActive('/services')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">⚙️</span>
+                    <span>Services</span>
+                  </Link>
+                  <Link to="/employer" className={`drawer-link ${isActive('/employer')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">🏢</span>
+                    <span>For Employers</span>
+                  </Link>
+                  <Link to="/jobs" className={`drawer-link ${isActive('/jobs')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">💼</span>
+                    <span>Find Jobs</span>
+                  </Link>
+                  <Link to="/contact" className={`drawer-link ${isActive('/contact')}`} onClick={closeMenu}>
+                    <span className="drawer-icon">📞</span>
+                    <span>Contact</span>
+                  </Link>
+                </div>
+                
+                <div className="drawer-footer">
+                  <div className="drawer-contact">
+                    <p>Need help? Call us</p>
+                    <a href="tel:+918383061237" className="drawer-phone">+91 8383061237</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </nav>
     </>

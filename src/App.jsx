@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
+import Loader from './components/Loader';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Loader />
         <Navbar />
         <EnquiryModal />
         
