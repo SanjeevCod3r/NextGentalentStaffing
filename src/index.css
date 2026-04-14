@@ -120,6 +120,21 @@ a {
   gap: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
@@ -244,15 +259,42 @@ a {
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Auth Modal Backdrop */
@@ -306,6 +348,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .collage-container {
     height: 300px;
   }
@@ -316,6 +362,85 @@ a {
 
   .text-gradient {
     display: inline-block;
+  }
+
+  .about-grid {
+    gap: 2rem;
+  }
+
+  .about-grid > div:first-child {
+    order: 2;
+  }
+
+  .about-grid > div:nth-child(2) {
+    order: 1;
+  }
+
+  .about-grid > div:nth-child(3) {
+    order: 3;
+  }
+
+  .power-badge-container {
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .power-badge {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+
+  /* Add breathing room for text */
+  h1, h2, h3, h4, h5, h6 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .glass-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  p {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .glass-card {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .btn {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+
+/* Hero Section Responsiveness */
+.hero-section {
+  padding: 4rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
   }
 }
 

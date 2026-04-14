@@ -95,7 +95,7 @@ const Services = () => {
         <div className="services-split-section" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '5rem', alignItems: 'flex-start' }}>
 
           {/* Left heading */}
-          <div>
+          <div className="inspiring-section">
             <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', fontWeight: '800', lineHeight: '1.2', margin: 0 }}>
               INSPIRING YOU TO REACH<br />
               <span style={{ textDecoration: 'underline', textDecorationColor: 'var(--primary)', textUnderlineOffset: '6px' }}>
@@ -133,6 +133,168 @@ const Services = () => {
           .services-rows-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .section-padding { padding: 4rem 0 !important; }
           .glass-card { padding: 2rem 1.5rem !important; }
+          
+          /* Text spacing fixes */
+          .services-page h2 {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          
+          .services-page p {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          
+          .services-page .glass-card {
+            margin-left: 0.5rem !important;
+            margin-right: 0.5rem !important;
+          }
+          
+          .services-page .glass-card h3 {
+            padding-left: 0.25rem !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          .services-page .glass-card p {
+            padding-left: 0.25rem !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          /* Inspiring section specific fixes */
+          .services-page .inspiring-section {
+            padding-left: 0.5rem !important;
+            padding-right: 1rem !important;
+          }
+          
+          .services-page .inspiring-section h2 {
+            padding-left: 0 !important;
+            padding-right: 0.5rem !important;
+          }
+          
+          .services-page .inspiring-section p {
+            padding-left: 0 !important;
+            padding-right: 0.5rem !important;
+          }
+          
+          /* Icon badge responsive */
+          .services-page .glass-card > div:first-child {
+            width: 70px !important;
+            height: 70px !important;
+            margin-bottom: 1rem !important;
+          }
+          
+          .services-page .glass-card > div:first-child svg {
+            width: 30px !important;
+            height: 30px !important;
+          }
+          
+          /* Service row responsive */
+          .services-page .services-rows-grid > div {
+            padding: 1rem !important;
+            margin: 0 0.5rem !important;
+          }
+          
+          .services-page .services-rows-grid > div > div:first-child {
+            width: 40px !important;
+            height: 40px !important;
+          }
+          
+          .services-page .services-rows-grid > div > div:first-child svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+          
+          .services-page .services-rows-grid h4 {
+            font-size: 0.95rem !important;
+          }
+          
+          .services-page .services-rows-grid p {
+            font-size: 0.8rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .section-padding { padding: 3rem 0 !important; }
+          .glass-card { padding: 1.5rem 1rem !important; }
+          
+          /* Smaller text spacing */
+          .services-page h2 {
+            padding-left: 0.25rem !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          .services-page p {
+            padding-left: 0.25rem !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          .services-page .glass-card {
+            margin-left: 0.25rem !important;
+            margin-right: 0.25rem !important;
+          }
+          
+          /* Inspiring section specific fixes for small mobile */
+          .services-page .inspiring-section {
+            padding-left: 0.25rem !important;
+            padding-right: 0.75rem !important;
+          }
+          
+          .services-page .inspiring-section h2 {
+            padding-left: 0 !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          .services-page .inspiring-section p {
+            padding-left: 0 !important;
+            padding-right: 0.25rem !important;
+          }
+          
+          /* Even smaller icons */
+          .services-page .glass-card > div:first-child {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          
+          .services-page .glass-card > div:first-child svg {
+            width: 26px !important;
+            height: 26px !important;
+          }
+          
+          .services-page .glass-card h3 {
+            font-size: 1.1rem !important;
+            padding-left: 0.15rem !important;
+            padding-right: 0.15rem !important;
+          }
+          
+          .services-page .glass-card p {
+            font-size: 0.85rem !important;
+            padding-left: 0.15rem !important;
+            padding-right: 0.15rem !important;
+          }
+          
+          /* Service rows smaller */
+          .services-page .services-rows-grid > div {
+            padding: 0.8rem !important;
+            margin: 0 0.25rem !important;
+          }
+          
+          .services-page .services-rows-grid > div > div:first-child {
+            width: 35px !important;
+            height: 35px !important;
+          }
+          
+          .services-page .services-rows-grid > div > div:first-child svg {
+            width: 18px !important;
+            height: 18px !important;
+          }
+          
+          .services-page .services-rows-grid h4 {
+            font-size: 0.9rem !important;
+          }
+          
+          .services-page .services-rows-grid p {
+            font-size: 0.75rem !important;
+          }
         }
       `}} />
     </div>

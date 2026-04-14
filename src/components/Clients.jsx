@@ -17,7 +17,7 @@ const Clients = () => {
       {/* Decorative Background Elements */}
       <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '300px', height: '300px', borderRadius: '50%', background: 'rgba(15, 98, 254, 0.03)', zIndex: 0 }}></div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 2fr)', gap: '4rem', alignItems: 'center' }}>
+      <div className="container clients-container" style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 2fr)', gap: '4rem', alignItems: 'center' }}>
         
         {/* Left Content Area */}
         <div>
@@ -79,6 +79,69 @@ const Clients = () => {
           transform: translateY(-8px) scale(1.02);
           box-shadow: 0 20px 40px rgba(15, 98, 254, 0.12);
           border-color: rgba(15, 98, 254, 0.2);
+        }
+
+        @media (max-width: 1024px) {
+          .clients-container {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .clients-container {
+            gap: 2rem !important;
+          }
+
+          .clients-container > div:first-child {
+            text-align: center;
+          }
+
+          .clients-container > div:first-child h2 {
+            font-size: 2rem !important;
+          }
+
+          .clients-container > div:first-child p {
+            font-size: 0.95rem !important;
+            margin-bottom: 2rem !important;
+          }
+
+          .clients-container > div:last-child {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
+          }
+
+          .industry-card-new {
+            padding: 1.5rem 0.8rem !important;
+          }
+
+          .industry-card-new span:first-child {
+            font-size: 2rem !important;
+            margin-bottom: 8px !important;
+          }
+
+          .industry-card-new span:last-child {
+            font-size: 0.7rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .clients-container > div:last-child {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.8rem !important;
+          }
+
+          .industry-card-new {
+            padding: 1rem 0.4rem !important;
+          }
+
+          .industry-card-new span:first-child {
+            font-size: 1.6rem !important;
+          }
+
+          .industry-card-new span:last-child {
+            font-size: 0.6rem !important;
+          }
         }
       `}</style>
     </section>

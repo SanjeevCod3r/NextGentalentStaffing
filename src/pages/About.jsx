@@ -184,10 +184,80 @@ const About = () => {
           .about-collage { height: 350px !important; }
         }
         @media (max-width: 768px) {
-          .intro-grid { grid-template-columns: 1fr !important; }
-          .about-collage { height: 300px !important; }
-          .glass-card { padding: 1.5rem !important; }
-          h2 { font-size: 2rem !important; }
+          .intro-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; margin-bottom: 2rem !important; }
+          .about-collage { height: 280px !important; }
+          .glass-card { padding: 1.2rem !important; }
+          h2 { font-size: 1.8rem !important; }
+          
+          .about-page .container > div[style*="gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'"] {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
+            margin-bottom: 3rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] {
+            padding: 1rem !important;
+            gap: 1rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] > div:first-child {
+            width: 45px !important;
+            height: 45px !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] h4 {
+            font-size: 1rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] p {
+            font-size: 0.8rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .intro-grid { gap: 1rem !important; margin-bottom: 1.5rem !important; }
+          .about-collage { height: 240px !important; }
+          .glass-card { padding: 1rem !important; }
+          h2 { font-size: 1.6rem !important; }
+          
+          .about-page div[style*="display: inline-flex"] {
+            padding: 0.25rem 1rem !important;
+            font-size: 0.7rem !important;
+            margin-bottom: 1rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] {
+            padding: 0.8rem !important;
+            gap: 0.8rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] > div:first-child {
+            width: 40px !important;
+            height: 40px !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] h4 {
+            font-size: 0.95rem !important;
+            margin-bottom: 0.25rem !important;
+          }
+          
+          .about-page .glass-card[style*="display: flex"] p {
+            font-size: 0.75rem !important;
+          }
+          
+          .about-page .bottom-content-grid .glass-card {
+            padding: 1rem !important;
+            gap: 1rem !important;
+          }
+          
+          .about-page .bottom-content-grid .glass-card h3 {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.4rem !important;
+          }
+          
+          .about-page .bottom-content-grid .glass-card p {
+            font-size: 0.85rem !important;
+          }
         }
       `}} />
     </div>

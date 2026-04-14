@@ -31,11 +31,11 @@ const Footer = () => {
 
       {/* Main Footer Section */}
       <footer style={{ background: '#0a1d37', color: 'white', padding: '5rem 0 0 0' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
+        <div className="container footer-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
           
           {/* Column 1: Company Info */}
           <div>
-            <img src="/asset/nextgentalentstaffing logo.png" alt="NextGen Logo" style={{ filter: 'brightness(0) invert(1)', maxWidth: '180px', marginBottom: '1.5rem' }} />
+            <img src="/asset/nextgentalentstaffing logo.png" alt="NextGen Logo" className="footer-logo" />
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: '1.8', margin: 0 }}>
               To become India's most trusted staffing partner. We simplify hiring and payroll for businesses while creating genuine job opportunities for candidates.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
           {/* Column 4: Contact */}
           <div>
             <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: '700' }}>Contact</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div className="contact-info" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <Phone size={20} color="var(--secondary)" style={{ flexShrink: 0, marginTop: '4px' }} />
                 <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem' }}>+91 8383061237</span>
@@ -99,6 +99,89 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-wrapper section:first-child {
+            padding: 3rem 0 !important;
+          }
+
+          .footer-wrapper section:first-child .container > div {
+            text-align: center !important;
+            justify-content: center !important;
+          }
+
+          .footer-wrapper section:first-child h2 {
+            font-size: 1.8rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+
+          .footer-wrapper section:first-child p {
+            font-size: 0.95rem !important;
+          }
+
+          .footer-container {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 2rem !important;
+            margin-bottom: 3rem !important;
+          }
+
+          .footer-container > div {
+            text-align: center !important;
+          }
+
+          .footer-container h4 {
+            font-size: 1.1rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+
+          .footer-container p {
+            font-size: 0.9rem !important;
+          }
+
+          .footer-container ul {
+            align-items: center !important;
+          }
+
+          .footer-container .contact-info {
+            align-items: center !important;
+            justify-content: center !important;
+          }
+
+          footer {
+            padding: 3rem 0 0 0 !important;
+          }
+
+          .footer-wrapper > footer > div:last-child {
+            padding: 1.5rem 0 !important;
+          }
+
+          .footer-wrapper > footer > div:last-child .container {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 1rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .footer-container {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
+
+          .footer-wrapper section:first-child {
+            padding: 2rem 0 !important;
+          }
+
+          .footer-wrapper section:first-child h2 {
+            font-size: 1.5rem !important;
+          }
+
+          footer {
+            padding: 2rem 0 0 0 !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
