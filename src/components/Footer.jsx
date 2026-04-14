@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Globe, Users, Info, MessageSquare } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -46,7 +46,7 @@ const Footer = () => {
             <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: '700' }}>Quick Links</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li><Link to="/" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Home</Link></li>
-              <li><Link to="/jobs" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Jobs</Link></li>
+              <li><Link to="/contact" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Contact</Link></li>
               <li><Link to="/services" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Our Services</Link></li>
               <li><Link to="/about" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">About Us</Link></li>
             </ul>
@@ -57,9 +57,9 @@ const Footer = () => {
             <h4 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '2rem', fontWeight: '700' }}>Support & Legal</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <li><Link to="/contact" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Contact Us</Link></li>
-              <li><Link to="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">FAQs</Link></li>
-              <li><Link to="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Privacy Policy</Link></li>
-              <li><Link to="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Terms & Conditions</Link></li>
+              <li><Link to="/contact" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">FAQs</Link></li>
+              <li><Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions" style={{ color: 'rgba(255,255,255,0.7)', transition: 'var(--transition)' }} className="footer-link">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -90,11 +90,27 @@ const Footer = () => {
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', margin: 0 }}>
               © {new Date().getFullYear()} NextGen Talent Staffing. All Rights Reserved.
             </p>
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
-              <span style={{ color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>FB</span>
-              <span style={{ color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>LN</span>
-              <span style={{ color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>IG</span>
-              <span style={{ color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>YT</span>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href="#" aria-label="Facebook" className="social-icon" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5H16V5c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5V11H8v3h2.6v7h2.9z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" className="social-icon" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.94 8.5a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44zM5.5 9.9h2.9V19H5.5V9.9zm4.7 0h2.8v1.3h.04c.39-.74 1.34-1.52 2.77-1.52 2.97 0 3.52 1.96 3.52 4.5V19h-2.9v-4.25c0-1.02-.02-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.25V19h-2.9V9.9z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram" className="social-icon" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3zm0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95h-8.5zm8.9 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 1.8A2.2 2.2 0 1 0 12 14.2 2.2 2.2 0 0 0 12 9.8z" />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube" className="social-icon" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M21.2 8.2a2.7 2.7 0 0 0-1.9-1.9C17.6 5.8 12 5.8 12 5.8s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9c-.5 1.7-.5 3.8-.5 3.8s0 2.1.5 3.8a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-3.8.5-3.8s0-2.1-.5-3.8zM10.2 15.2V8.8l5.4 3.2-5.4 3.2z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
